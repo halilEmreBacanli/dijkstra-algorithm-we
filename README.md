@@ -1,93 +1,93 @@
 # Smart Route Navigator 🗺️
 
-Dijkstra's Algorithm kullanarak en kısa yol bulan interaktif web harita uygulaması.
+An interactive web map application that finds the shortest path using Dijkstra's Algorithm.
 
-## 📋 Proje Hakkında
+## 📋 About The Project
 
-Bu proje, CENG 3511 Yapay Zeka dersi için geliştirilmiş bir web uygulamasıdır. Kullanıcıların Türkiye haritası üzerinde iki şehir seçerek aralarındaki en kısa yolu Dijkstra algoritması ile bulmasını sağlar.
+This project is a web application developed for the CENG 3511 Artificial Intelligence course. It allows users to select two cities on a map of Turkey and find the shortest path between them using Dijkstra's algorithm.
 
-## ✨ Özellikler
+## ✨ Features
 
-- **İnteraktif Leaflet Haritası**: OpenStreetMap tabanlı görsel harita
-- **Graf Tabanlı Yol Ağı**: Önceden tanımlanmış şehirler ve mesafeler
-- **Dijkstra Algoritması**: En kısa yol hesaplama
-- **Görsel Yol Çizimi**: Polyline ile rota görselleştirme
-- **Mesafe Hesaplama**: Toplam km cinsinden mesafe gösterimi
+- **Interactive Leaflet Map**: Visual map based on OpenStreetMap
+- **Graph-Based Road Network**: Predefined cities and distances
+- **Dijkstra's Algorithm**: Shortest path computation
+- **Visual Path Drawing**: Route visualization with polyline
+- **Distance Calculation**: Total distance display in kilometers
 
-## 🛠️ Teknolojiler
+## 🛠️ Technologies
 
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
-- Leaflet.js (Harita kütüphanesi)
+- Leaflet.js (Map library)
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
 smart-route-finder/
-├── index.html          # Ana HTML dosyası
-├── style.css           # Stil dosyası
-├── script.js           # Ana uygulama mantığı
-├── dijkstra.js         # Dijkstra algoritması implementasyonu
-├── graph-data.json     # Şehir ve yol verileri
-└── README.md           # Bu dosya
+├── index.html          # Main HTML file
+├── style.css           # Stylesheet
+├── script.js           # Main application logic
+├── dijkstra.js         # Dijkstra's algorithm implementation
+├── graph-data.json     # City and road data
+└── README.md           # This file
 ```
 
-## 🚀 Kurulum ve Çalıştırma
+## 🚀 Installation and Running
 
-### Yöntem 1: Doğrudan Tarayıcıda Açma
-1. Projeyi indirin veya klonlayın
-2. `index.html` dosyasını bir web tarayıcısında açın
+### Method 1: Open Directly in Browser
+1. Download or clone the project
+2. Open `index.html` in a web browser
 
-### Yöntem 2: Yerel Sunucu ile (Önerilen)
+### Method 2: With Local Server (Recommended)
 ```bash
-# Python 3 ile
+# With Python 3
 python -m http.server 8000
 
-# Node.js ile (live-server paketi gerekli)
+# With Node.js (live-server package required)
 npx live-server
 ```
-Ardından tarayıcıda `http://localhost:8000` adresine gidin.
+Then go to `http://localhost:8000` in your browser.
 
-## 📖 Kullanım
+## 📖 Usage
 
-1. Haritada bir şehre tıklayarak **başlangıç noktası** seçin (yeşil olur)
-2. Başka bir şehre tıklayarak **bitiş noktası** seçin (kırmızı olur)
-3. **"Yol Bul"** butonuna tıklayın
-4. En kısa rota mor çizgiyle haritada gösterilir
-5. Toplam mesafe ve geçilen şehirler yan panelde görüntülenir
-6. Yeni bir arama için **"Sıfırla"** butonuna tıklayın
+1. Click on a city on the map to select the **starting point** (turns green)
+2. Click on another city to select the **destination point** (turns red)
+3. Click the **"Find Path"** button
+4. The shortest route is displayed on the map with a purple line
+5. Total distance and visited cities are shown in the side panel
+6. Click **"Reset"** button for a new search
 
-## 🧮 Dijkstra Algoritması
+## 🧮 Dijkstra's Algorithm
 
-Dijkstra algoritması, ağırlıklı graflarda tek kaynaklı en kısa yol problemini çözer:
+Dijkstra's algorithm solves the single-source shortest path problem in weighted graphs:
 
-1. Başlangıç düğümüne 0, diğer tüm düğümlere sonsuz mesafe ata
-2. Ziyaret edilmemiş düğümler arasından en küçük mesafeye sahip olanı seç
-3. Bu düğümün komşularının mesafelerini güncelle
-4. Hedef düğüme ulaşana kadar tekrarla
-5. Yolu geriye doğru takip ederek rotayı oluştur
+1. Assign distance 0 to the starting node and infinity to all other nodes
+2. Select the unvisited node with the smallest distance
+3. Update the distances of this node's neighbors
+4. Repeat until the destination node is reached
+5. Trace back the path to construct the route
 
-**Zaman Karmaşıklığı**: O(V²) - V: düğüm sayısı
+**Time Complexity**: O(V²) - V: number of vertices
 
-## 📊 Graf Verisi
+## 📊 Graph Data
 
-Uygulama Türkiye'nin 8 büyük şehrini içerir:
-- İstanbul, Ankara, İzmir, Bursa
-- Eskişehir, Antalya, Konya, Denizli
+The application includes 8 major cities of Turkey:
+- Istanbul, Ankara, Izmir, Bursa
+- Eskisehir, Antalya, Konya, Denizli
 
-Kenar ağırlıkları gerçek karayolu mesafelerine yakın değerlerdir (km).
+Edge weights are approximate real highway distances (in km).
 
-## 📝 Geliştirme Notları
+## 📝 Development Notes
 
-- Graf verisi `graph-data.json` dosyasından yüklenir
-- Yeni şehirler eklemek için JSON dosyasını düzenleyin
-- Kenarlar çift yönlüdür (bidirectional)
+- Graph data is loaded from the `graph-data.json` file
+- To add new cities, edit the JSON file
+- Edges are bidirectional
 
-## 👤 Geliştirici
+## 👤 Developer
 
-CENG 3511 - Yapay Zeka Dersi Final Projesi
+CENG 3511 - Artificial Intelligence Course Final Project
 
-## 📄 Lisans
+## 📄 License
 
-Bu proje eğitim amaçlı geliştirilmiştir.
+This project is developed for educational purposes.
