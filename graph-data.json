@@ -1,0 +1,55 @@
+{
+  "nodes": ["Istanbul", "Ankara", "Izmir", "Bursa", "Eskisehir", "Antalya", "Konya", "Denizli"],
+  "coordinates": {
+    "Istanbul": [41.0082, 28.9784],
+    "Ankara": [39.9334, 32.8597],
+    "Izmir": [38.4192, 27.1287],
+    "Bursa": [40.1885, 29.0610],
+    "Eskisehir": [39.7767, 30.5206],
+    "Antalya": [36.8969, 30.7133],
+    "Konya": [37.8746, 32.4932],
+    "Denizli": [37.7765, 29.0864]
+  },
+  "edges": {
+    "Istanbul": [
+      {"node": "Bursa", "weight": 155},
+      {"node": "Ankara", "weight": 450},
+      {"node": "Eskisehir", "weight": 330}
+    ],
+    "Ankara": [
+      {"node": "Istanbul", "weight": 450},
+      {"node": "Eskisehir", "weight": 235},
+      {"node": "Konya", "weight": 260}
+    ],
+    "Izmir": [
+      {"node": "Bursa", "weight": 330},
+      {"node": "Denizli", "weight": 240}
+    ],
+    "Bursa": [
+      {"node": "Istanbul", "weight": 155},
+      {"node": "Izmir", "weight": 330},
+      {"node": "Eskisehir", "weight": 150}
+    ],
+    "Eskisehir": [
+      {"node": "Istanbul", "weight": 330},
+      {"node": "Bursa", "weight": 150},
+      {"node": "Ankara", "weight": 235},
+      {"node": "Konya", "weight": 360},
+      {"node": "Denizli", "weight": 340}
+    ],
+    "Antalya": [
+      {"node": "Konya", "weight": 300},
+      {"node": "Denizli", "weight": 220}
+    ],
+    "Konya": [
+      {"node": "Ankara", "weight": 260},
+      {"node": "Eskisehir", "weight": 360},
+      {"node": "Antalya", "weight": 300}
+    ],
+    "Denizli": [
+      {"node": "Izmir", "weight": 240},
+      {"node": "Eskisehir", "weight": 340},
+      {"node": "Antalya", "weight": 220}
+    ]
+  }
+}
